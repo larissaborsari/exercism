@@ -1,0 +1,17 @@
+// description at https://exercism.org/tracks/javascript/exercises/freelancer-rates
+
+export function dayRate(ratePerHour) {
+  return ratePerHour * 8;
+}
+
+export function daysInBudget(budget, ratePerHour) {
+  return Math.floor(budget / ratePerHour / 8);
+}
+
+export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
+ let months = Math.floor(numDays / 22);
+  let days = 22 * months;
+  let pricemonths = days * ratePerHour * 8 * (1 - discount);
+  let daysleft = numDays - days;
+  return Math.ceil(pricemonths + (daysleft * ratePerHour * 8));
+}
