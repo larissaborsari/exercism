@@ -1,0 +1,55 @@
+//description at https://exercism.org/tracks/javascript/exercises/annalyns-infiltration
+
+const knightIsAwake = false;
+const archerIsAwake = true;
+const prisonerIsAwake = false;
+const petDogIsPresent = true;
+export function canExecuteFastAttack(knightIsAwake) {
+  let status = false;
+  if (knightIsAwake) {
+     status = false;
+   }
+  if (!knightIsAwake) {
+    status = true;
+  }
+  return status;
+  ;
+}
+
+export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
+  if (knightIsAwake | archerIsAwake | prisonerIsAwake) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
+  if (archerIsAwake & prisonerIsAwake){
+    return false;
+  }
+  else if (!archerIsAwake & prisonerIsAwake){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+export function canFreePrisoner(
+  knightIsAwake,
+  archerIsAwake,
+  prisonerIsAwake,
+  petDogIsPresent
+) {
+  if (petDogIsPresent & !archerIsAwake) {
+    return true;   
+  }
+  else if (!petDogIsPresent & prisonerIsAwake & !archerIsAwake & !knightIsAwake) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
