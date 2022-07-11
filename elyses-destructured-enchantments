@@ -1,0 +1,26 @@
+description at https://exercism.org/tracks/javascript/exercises/elyses-destructured-enchantments
+
+export function getFirstCard(deck) {
+  const [first, ...everythingElse] = deck;
+  return first;
+}
+export function getSecondCard(deck) {
+  const [first, second, ...everythingElse] = deck;
+  return second;
+}
+export function swapTopTwoCards(deck) {
+  const [first, second, ...everythingElse] = deck;
+  const newDeck = [second, first, ...everythingElse];
+  return newDeck;
+}
+export function discardTopCard(deck) {
+  const [first, ...everythingElse] = deck;
+  const newDeck2 = [first, everythingElse];
+  return newDeck2;
+}
+const FACE_CARDS = ['jack', 'queen', 'king'];
+export function insertFaceCards(deck) {
+  const [first, ...everythingElse] = deck;
+  const newDeck3 = [first, ...FACE_CARDS, ...everythingElse];
+  return newDeck3;
+}
