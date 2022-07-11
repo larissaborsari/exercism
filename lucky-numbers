@@ -1,0 +1,27 @@
+description at https://exercism.org/tracks/javascript/exercises/lucky-numbers
+
+export function twoSum(array1, array2) {
+  const num1 = array1.join('');
+  const num2 = array2.join('');
+  return Number(num1) + Number(num2);
+}
+export function luckyNumber(value) {
+  const num = String(value);
+  const reverse = num.split('').reverse().join('');
+  if (num.split('').join('') == reverse){
+   return true;
+  } else {
+    return false;
+  }
+}
+export function errorMessage(input) {
+  if(!input){
+    return 'Required field';
+  }
+  else if (!Number(input)){
+    return 'Must be a number besides 0';
+  }
+  else {
+    return '';
+  }
+}
