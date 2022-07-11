@@ -1,0 +1,35 @@
+description at https://exercism.org/tracks/javascript/exercises/high-score-board
+
+export function createScoreBoard() {
+  const highScoreBoard = {
+    'The Best Ever': 1000000,
+  };
+  return highScoreBoard;
+}
+export function addPlayer(scoreBoard, player, score) {
+  scoreBoard[player] = score;
+  return scoreBoard;
+};
+export function removePlayer(scoreBoard, player) {
+ if (scoreBoard.hasOwnProperty(player)){
+   delete scoreBoard[player];
+   return scoreBoard;
+ }
+ return scoreBoard;
+    
+}
+export function updateScore(scoreBoard, player, points) {
+  scoreBoard[player] = scoreBoard[player] + points;
+  return scoreBoard;
+}
+export function applyMondayBonus(scoreBoard) {
+  for (let name in scoreBoard) {
+    scoreBoard[name] = scoreBoard[name] + 100;
+  } 
+  return scoreBoard;
+}
+export function normalizeScore(params) {
+  
+  let scr = params.score;
+  return params.normalizeFunction(scr);
+}
