@@ -1,0 +1,53 @@
+description at https://exercism.org/tracks/javascript/exercises/lasagna-master
+
+export function cookingStatus(remainingTime){
+  if (remainingTime == 0){
+    return 'Lasagna is done.';
+  }
+  else if (remainingTime > 0){
+    return 'Not done, please wait.';
+  }
+  else if (remainingTime == undefined){
+    return 'You forgot to set the timer.';
+  }
+};
+export function preparationTime(layers, timePerLayer) {
+  const layerAmount = layers.length;
+if (timePerLayer > 0) {
+  const time = layerAmount * timePerLayer;
+  return time;
+}
+else if (timePerLayer == undefined) {
+  return layerAmount * 2;
+}
+}
+export function quantities(layers) {
+  let noodlesAmount = 0;
+  let sauceAmount = 0;
+  
+  for(let i = 0; i < layers.length; i++){
+    if (layers[i] == 'noodles'){
+      noodlesAmount += 50;
+    }
+    else if (layers[i] == 'sauce'){
+      sauceAmount += 0.2;
+    }
+  };
+  let obj = {
+    noodles: noodlesAmount,
+    sauce: sauceAmount,
+  };
+  return obj;
+};
+export function addSecretIngredient(friendsList, myList) {
+  const ultimo = friendsList[friendsList.length-1];
+  myList.push(ultimo);
+};
+export function scaleRecipe(recipe, number) {
+  var newScale = {};
+  for(const chave in recipe){
+    newScale[chave] = recipe[chave] * (number/2);
+    
+  }
+  return newScale;
+}
