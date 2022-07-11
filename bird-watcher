@@ -1,0 +1,22 @@
+description at https://exercism.org/tracks/javascript/exercises/bird-watcher/iterations
+
+export function totalBirdCount(birdsPerDay) {
+  let a = 0;
+  for (let i = 0; i < (birdsPerDay.length); i++){
+    a = a + birdsPerDay[i];
+  }
+  return a;
+  }
+export function birdsInWeek(birdsPerDay, week) {
+  let soma = 0;
+  const valores = []; 
+  for (let countw = 0; countw < week*7; countw ++){
+    soma = soma + birdsPerDay[countw];
+    if (countw != 0 ){
+      if ((countw + 1) % 7 == 0 ){
+        valores.push(soma);
+        soma = 0;
+      }
+    }
+    
+  }
